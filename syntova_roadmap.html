@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntova Career Switch Program - Candidate Roadmap</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-blue: #0047AB; /* Deep blue from Syntova logo */
+            --secondary-cyan: #00B4D8; /* Cyan from Syntova logo */
+            --accent-gold: #FFB703; /* Gold accent */
+            --text-main: #2D3748;
+            --text-muted: #4A5568;
+            --bg-light: #F7FAFC;
+            --border-color: #E2E8F0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: #EDF2F7;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .document-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .page-section {
+            padding: 3rem 4rem;
+            position: relative;
+            border-bottom: 8px solid var(--bg-light);
+        }
+        
+        .page-section:last-child {
+            border-bottom: none;
+        }
+
+        /* Header Alignment */
+        .doc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-container img {
+            max-height: 85px; /* Ensures logo fits perfectly */
+            width: auto;
+            display: block;
+        }
+
+        .division-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: right;
+            line-height: 1.4;
+        }
+        
+        .division-title span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--secondary-cyan);
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Profile Grid Alignment */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-blue);
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-item strong {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-item span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Flow Alignment */
+        .transition-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2.5rem 0;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .flow-step {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 0.85rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .flow-arrow {
+            color: var(--secondary-cyan);
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        /* Table Alignment */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        td {
+            font-size: 0.95rem;
+        }
+
+        tr:nth-child(even) td {
+            background-color: var(--bg-light);
+        }
+
+        /* Month Cards Alignment */
+        .month-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            page-break-inside: avoid;
+        }
+
+        .month-header {
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .month-header h3 {
+            color: var(--primary-blue);
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .month-content {
+            padding: 1.5rem;
+        }
+
+        .month-objective {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .syllabus-container {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .syllabus-col {
+            flex: 1;
+        }
+
+        .syllabus-col h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .syllabus-col ul {
+            padding-left: 1.2rem;
+        }
+
+        .syllabus-col li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .deliverable-box {
+            background: #E6F7FF;
+            border: 1px solid #BAE3FF;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+        }
+
+        .deliverable-box h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .deliverable-box p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Schedule Container */
+        .schedule-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .commitment-list {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .commitment-list li {
+            background: var(--white);
+            padding: 0.75rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .page-section { padding: 2rem; }
+            .profile-grid, .schedule-container, .syllabus-container { grid-template-columns: 1fr; flex-direction: column; }
+            .transition-flow { flex-direction: column; align-items: stretch; }
+            .flow-arrow { display: none; }
+            .flow-step { margin-bottom: 0.5rem; }
+            .doc-header { flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; }
+            .division-title { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <!-- PAGE 1 -->
+    <section class="page-section">
+        <header class="doc-header">
+            <div class="logo-container">
+                <img src="Syntova Corporate Trainings Logo.png" alt="Syntova Logo">
+            </div>
+            <div class="division-title">
+                Corporate Training Division
+                <span>Candidate Custom Roadmap</span>
+            </div>
+        </header>
+
+        <h1>6-Month Career Switch Program</h1>
+        <div class="subtitle">Oracle PL/SQL Developer → Cloud Data Engineer</div>
+
+        <h2>Candidate Profile & Objectives</h2>
+        <div class="profile-grid">
+            <div class="profile-item">
+                <strong>Candidate Name</strong>
+                <span>Shilpa Chile</span>
+            </div>
+            <div class="profile-item">
+                <strong>Target Roles</strong>
+                <span>Cloud Data Engineer / ETL Developer</span>
+            </div>
+            <div class="profile-item">
+                <strong>Foundation</strong>
+                <span>Oracle SQL/PLSQL & Banking Domain</span>
+            </div>
+            <div class="profile-item">
+                <strong>Program Duration</strong>
+                <span>6 Months / 24 Weeks</span>
+            </div>
+            <div class="profile-item">
+                <strong>Primary Certification</strong>
+                <span>AWS Certified Data Engineer - Associate</span>
+            </div>
+            <div class="profile-item">
+                <strong>Long-Term Comp Goal</strong>
+                <span>₹20 LPA</span>
+            </div>
+        </div>
+
+        <h2>The Technical Transition Strategy</h2>
+        <p>Shilpa's existing Oracle SQL/PLSQL and banking-domain experience are the foundation of this program, not something to be discarded. This roadmap is designed specifically to bridge her career gap through targeted technical re-entry, an enterprise-grade portfolio, and rigorous interview preparation.</p>
+        
+        <div class="transition-flow">
+            <div class="flow-step">Oracle PL/SQL</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Python</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">AWS Cloud</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">PySpark</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Data Engineering</div>
+        </div>
+
+        <h2>Placement Trajectory & Targets</h2>
+        <p>The 20 LPA objective is positioned as the definitive career destination. For Shilpa, the immediate victory strategy is structured in progressive tiers: conquering the career gap, securing technical employment, gaining production cloud experience, and ultimately achieving the senior compensation bracket.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th width="30%">Career Milestone Phase</th>
+                    <th width="45%">Target Outcome / Focus</th>
+                    <th width="25%">Expected Compensation Range</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Level 1: Minimum Re-entry Target</strong></td>
+                    <td>Overcoming career gap, securing immediate technical role</td>
+                    <td>₹6.0 - ₹8.0 LPA</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 2: Strong Target</strong></td>
+                    <td>Direct placement as Cloud Data/ETL Engineer</td>
+                    <td>₹8.0 - ₹12.0 LPA</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 3: Stretch Target</strong></td>
+                    <td>Premium enterprise role leveraging full AWS</td>
+                    <td>₹12.0 - ₹15.0 LPA</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="footer">Syntova Corporate Trainings - Shilpa Chile Roadmap | Page 1 of 5</div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page-section">
+        <header class="doc-header">
+            <div class="logo-container">
+                <img src="Syntova Corporate Trainings Logo.png" alt="Syntova Logo">
+            </div>
+        </header>
+
+        <h2>Phase 1: Foundation & Cloud Transition</h2>
+        
+        <div class="month-card">
+            <div class="month-header">
+                <h3>Month 1 - Advanced SQL + Oracle Re-entry</h3>
+            </div>
+            <div class="month-content">
+                <p class="month-objective">Objective: Rebuild existing database expertise and prepare for technical SQL interviews.</p>
+                <div class="syllabus-container">
+                    <div class="syllabus-col">
+                        <h4>Core Syllabus</h4>
+                        <ul>
+                            <li>Advanced filtering, sorting, aggregates</li>
+                            <li>INNER, LEFT, RIGHT, FULL, Self & Cross Joins</li>
+                            <li>Correlated subqueries & CTEs</li>
+                            <li>Window functions (ROW_NUMBER, RANK, DENSE_RANK)</li>
+                            <li>LEAD, LAG, Running totals, Moving averages</li>
+                        </ul>
+                    </div>
+                    <div class="syllabus-col">
+                        <h4>&nbsp;</h4> <!-- For alignment -->
+                        <ul>
+                            <li>PL/SQL blocks, Cursors, Procedures, Functions</li>
+                            <li>Triggers, Exception handling, Dynamic SQL</li>
+                            <li>Indexes, Query optimisation, Normalisation</li>
+                            <li>Transactions, COMMIT/ROLLBACK, Locking</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="deliverable-box">
+                    <h4>Month 1 Deliverable: Banking Transaction Management DB</h4>
+                    <p>Build schema: Customer, Account, Transaction, Loan, Branch. Develop PL/SQL procedures, triggers, and daily reconciliation reports.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="month-card">
+            <div class="month-header">
+                <h3>Month 2 - Python for Data Engineering</h3>
+            </div>
+            <div class="month-content">
+                <p class="month-objective">Objective: Move from SQL-only development to Python integration and data processing.</p>
+                <div class="syllabus-container">
+                    <div class="syllabus-col">
+                        <h4>Core Syllabus</h4>
+                        <ul>
+                            <li>Python variables, data types, operators, loops</li>
+                            <li>Lists, Tuples, Sets, Dictionaries, Strings</li>
+                            <li>OOP: Classes, Objects, Inheritance</li>
+                            <li>Lambda, map/filter, List comprehension</li>
+                            <li>NumPy & Pandas for data manipulation</li>
+                        </ul>
+                    </div>
+                    <div class="syllabus-col">
+                        <h4>&nbsp;</h4>
+                        <ul>
+                            <li>Handling CSV, JSON, Excel, Parquet</li>
+                            <li>Data validation & cleaning techniques</li>
+                            <li>SQLAlchemy & SQL execution from Python</li>
+                            <li>Virtual environments, pip, logging</li>
+                            <li>Git, GitHub, Commits, Pull requests</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="deliverable-box">
+                    <h4>Month 2 Deliverable: Python Banking Data System</h4>
+                    <p>Input: CSV → Python → Transformation → Validation → Oracle/MySQL. Output clean dataset & reconciliation reports.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="month-card">
+            <div class="month-header">
+                <h3>Month 3 - AWS Cloud Fundamentals</h3>
+            </div>
+            <div class="month-content">
+                <p class="month-objective" style="margin-bottom: 0; border-bottom: none;">Objective: Build a strong comfort level with cloud infrastructure before advancing to ETL services.</p>
+            </div>
+        </div>
+        
+        <div class="footer">Syntova Corporate Trainings - Shilpa Chile Roadmap | Page 2 of 5</div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page-section">
+        <header class="doc-header">
+            <div class="logo-container">
+                <img src="Syntova Corporate Trainings Logo.png" alt="Syntova Logo">
+            </div>
+        </header>
+
+        <h2>Phase 2: Data Engineering & Certification</h2>
+        
+        <div class="month-card">
+            <div class="month-header">
+                <h3>Month 4 - Core Data Engineering</h3>
+            </div>
+            <div class="month-content">
+                <p class="month-objective">Objective: Master data pipelines, modern data warehousing, and AWS analytics services.</p>
+                <div class="syllabus-container">
+                    <div class="syllabus-col">
+                        <h4>Core Syllabus</h4>
+                        <ul>
+                            <li>ETL vs ELT architectures, Batch vs Incremental</li>
+                            <li>CDC concepts, Delta loads, Error handling</li>
+                            <li>AWS Glue Data Catalog, Crawlers, Jobs</li>
+                            <li>Amazon Athena & S3 Data Lakes</li>
+                        </ul>
+                    </div>
+                    <div class="syllabus-col">
+                        <h4>&nbsp;</h4>
+                        <ul>
+                            <li>Data Warehouse OLTP vs OLAP</li>
+                            <li>Star/Snowflake schemas, Fact & Dimension tables</li>
+                            <li>Slowly Changing Dimensions, Partitioning</li>
+                            <li>Apache Airflow: DAGs, Tasks, Scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="deliverable-box">
+                    <h4>Month 4 Deliverable: Banking Data Warehouse</h4>
+                    <p>Source (Oracle/CSV) → S3 Data Lake → AWS Glue Transformation → Redshift Analytics tables. Candidate must explain architecture blind.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="month-card">
+            <div class="month-header">
+                <h3>Month 5 - PySpark & Advanced Engineering</h3>
+            </div>
+            <div class="month-content">
+                <p class="month-objective">Objective: Scale processing with PySpark and prepare for the official AWS examination.</p>
+                <div class="syllabus-container">
+                    <div class="syllabus-col">
+                        <h4>Core Syllabus</h4>
+                        <ul>
+                            <li>Spark architecture: Driver, Executors, RDDs</li>
+                            <li>DataFrames, Transformations vs Actions</li>
+                            <li>PySpark joins, aggregations, Window functions</li>
+                            <li>Partitioning, Caching, Performance tuning</li>
+                        </ul>
+                    </div>
+                    <div class="syllabus-col">
+                        <h4>&nbsp;</h4>
+                        <ul>
+                            <li>Data quality, Schema validation, Null handling</li>
+                            <li>Error tables, Retry mechanisms, Data lineage</li>
+                            <li>AWS Optimisation: Glue, Redshift, S3, Costs</li>
+                            <li>Begin AWS DEA-C01 Certification Prep</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="deliverable-box">
+                    <h4>Month 5 Deliverable: End-to-End Financial Pipeline</h4>
+                    <p>Integrate Python, SQL, PySpark, S3, Glue, Redshift, and Airflow with data quality checks, logging, and CloudWatch monitoring.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="month-card">
+            <div class="month-header">
+                <h3>Month 6 - Certification + Placement Bootcamp</h3>
+            </div>
+            <div class="month-content">
+                <p class="month-objective">Objective: Convert skills and projects into a polished resume, pass the exam, and secure employment.</p>
+                <div class="syllabus-container">
+                    <div class="syllabus-col">
+                        <h4>Core Syllabus</h4>
+                        <ul>
+                            <li>Resume Building & LinkedIn Optimization</li>
+                            <li>Mock Technical Interviews</li>
+                            <li>AWS DEA-C01 Final Practice Exams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">Syntova Corporate Trainings - Shilpa Chile Roadmap | Page 3 of 5</div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page-section">
+        <header class="doc-header">
+            <div class="logo-container">
+                <img src="Syntova Corporate Trainings Logo.png" alt="Syntova Logo">
+            </div>
+        </header>
+
+        <h2>24-Week Detailed Schedule</h2>
+        
+        <div class="schedule-container">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="25%">Week</th>
+                            <th width="75%">Primary Focus & Deliverable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Week 1</strong></td><td>SQL revision (50 SQL problems)</td></tr>
+                        <tr><td><strong>Week 2</strong></td><td>Advanced joins & subqueries challenge</td></tr>
+                        <tr><td><strong>Week 3</strong></td><td>CTE + Window Functions analytics</td></tr>
+                        <tr><td><strong>Week 4</strong></td><td>PL/SQL + performance (Banking DB)</td></tr>
+                        <tr><td><strong>Week 5</strong></td><td>Python fundamentals (30 programs)</td></tr>
+                        <tr><td><strong>Week 6</strong></td><td>Python intermediate (OOP project)</td></tr>
+                        <tr><td><strong>Week 7</strong></td><td>Pandas + files (ETL script)</td></tr>
+                        <tr><td><strong>Week 8</strong></td><td>Python + SQL Reconciliation system</td></tr>
+                        <tr><td><strong>Week 9</strong></td><td>AWS fundamentals (IAM & architecture)</td></tr>
+                        <tr><td><strong>Week 10</strong></td><td>S3 + EC2 (Cloud storage project)</td></tr>
+                        <tr><td><strong>Week 11</strong></td><td>Lambda + RDS (Serverless exercise)</td></tr>
+                        <tr><td><strong>Week 12</strong></td><td>Cloud monitoring (AWS mini-project)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="25%">Week</th>
+                            <th width="75%">Primary Focus & Deliverable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Week 13</strong></td><td>AWS Glue (First AWS ETL)</td></tr>
+                        <tr><td><strong>Week 14</strong></td><td>Athena + Redshift (Warehouse)</td></tr>
+                        <tr><td><strong>Week 15</strong></td><td>Data modelling (Star schema)</td></tr>
+                        <tr><td><strong>Week 16</strong></td><td>Apache Airflow (Automated pipeline)</td></tr>
+                        <tr><td><strong>Week 17</strong></td><td>PySpark basics (Transformations)</td></tr>
+                        <tr><td><strong>Week 18</strong></td><td>PySpark advanced (Large datasets)</td></tr>
+                        <tr><td><strong>Week 19</strong></td><td>Data quality (Validation framework)</td></tr>
+                        <tr><td><strong>Week 20</strong></td><td>AWS optimisation (Production pipeline)</td></tr>
+                        <tr><td><strong>Week 21</strong></td><td>AWS DEA-C01 Certification revision</td></tr>
+                        <tr><td><strong>Week 22</strong></td><td>Mock tests (80%+ target)</td></tr>
+                        <tr><td><strong>Week 23</strong></td><td>Interview preparation (Resume/GitHub)</td></tr>
+                        <tr><td><strong>Week 24</strong></td><td>Placement bootcamp & Final assessment</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Weekly Commitment Structure (Mon-Sat)</h3>
+        <p>Designed for 3.5 - 4 hours per day to ensure deep technical retention.</p>
+        <ul class="commitment-list">
+            <li>⏱️ 60 min: Concept learning</li>
+            <li>💻 60 min: Coding/SQL</li>
+            <li>🚀 60 min: Project execution</li>
+            <li>🗣️ 30 min: Interview questions</li>
+            <li>📚 30 min: Revision/documentation</li>
+        </ul>
+        <p style="color: var(--text-muted); font-size: 0.95rem;"><em>Sundays are reserved for Weekly Tests, Project reviews, GitHub updates, and doubt clearing.</em></p>
+        
+        <h3 style="margin-top: 2rem;">Comprehensive Placement Package</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Integrated into the final phase of the program to ensure technical skills translate to career success.</p>
+
+        <div class="footer">Syntova Corporate Trainings - Shilpa Chile Roadmap | Page 4 of 5</div>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page-section">
+        <header class="doc-header">
+            <div class="logo-container">
+                <img src="Syntova Corporate Trainings Logo.png" alt="Syntova Logo">
+            </div>
+        </header>
+
+        <h2>Commercial Structure</h2>
+        <p>The total investment for the complete 6-Month Syntova Cloud Data Engineering Career Switch Program is ₹75,000. We have structured this into manageable monthly milestones to align with training progress.</p>
+        
+        <h3 style="margin-top: 2rem;">Program Fee Structure</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th width="30%">Fee Component</th>
+                    <th width="20%">Amount</th>
+                    <th width="50%">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total Program Fee</strong></td>
+                    <td>₹75,000</td>
+                    <td>Comprehensive 6-month hands-on / project-based training.</td>
+                </tr>
+                <tr>
+                    <td><strong>Registration / Admission</strong></td>
+                    <td>₹25,000</td>
+                    <td>Initial payment to secure enrollment and begin Month 1.</td>
+                </tr>
+                <tr>
+                    <td><strong>Balance Training Fee</strong></td>
+                    <td>₹50,000</td>
+                    <td>Payable via 5 equal monthly installments.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem;">Payment Schedule</h3>
+        <table style="width: 50%;">
+            <thead>
+                <tr>
+                    <th>Payment Timeline</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Admission (Registration)</td>
+                    <td>₹25,000</td>
+                </tr>
+                <tr>
+                    <td>Instalment 1 (Month 2)</td>
+                    <td>₹10,000</td>
+                </tr>
+                <tr>
+                    <td>Instalment 2 (Month 3)</td>
+                    <td>₹10,000</td>
+                </tr>
+                <tr>
+                    <td>Instalment 3 (Month 4)</td>
+                    <td>₹10,000</td>
+                </tr>
+                <tr>
+                    <td>Instalment 4 (Month 5)</td>
+                    <td>₹10,000</td>
+                </tr>
+                <tr>
+                    <td>Instalment 5 (Month 6)</td>
+                    <td>₹10,000</td>
+                </tr>
+                <tr style="background-color: #E6F7FF; color: var(--primary-blue);">
+                    <td><strong>Total Investment</strong></td>
+                    <td><strong>₹75,000</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 2rem;">Certification Estimates (External)</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Note: Certification examination fees are strictly separate, as the official examination fee is paid directly to Amazon Web Services, Inc., not to Syntova.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th width="35%">Item</th>
+                    <th width="25%">Estimated Cost</th>
+                    <th width="40%">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>AWS DEA-C01 Examination</strong></td>
+                    <td>₹12,830 + taxes</td>
+                    <td>Official voucher (currently listed at US$150).</td>
+                </tr>
+                <tr>
+                    <td><strong>Practice Tests</strong></td>
+                    <td>₹0 - ₹3,000</td>
+                    <td>Recommended for mock examination phase.</td>
+                </tr>
+                <tr>
+                    <td><strong>AWS Cloud Usage</strong></td>
+                    <td>₹0 - ₹3,000*</td>
+                    <td>Depends on resources created. Syntova teaches strict cost controls.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">Syntova Corporate Trainings - Shilpa Chile Roadmap | Page 5 of 5</div>
+    </section>
+</div>
+
+</body>
+</html>
